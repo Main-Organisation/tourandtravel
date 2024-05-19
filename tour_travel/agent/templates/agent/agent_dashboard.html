@@ -1,0 +1,72 @@
+{% extends "agent/agent_nav.html" %}
+
+
+{% block content %}
+{% include "message.html" %}
+<section class="padding">
+    <div class="container">
+        <div class="text-center">
+            <h2 class=" mt-5 text-uppercase">CHOOSE</h2>
+            <p class="text-uppercase">YOUR DESTINATION TO PROCEED</p>
+        </div>
+        <form class="d-flex justify-content-around">
+            <!-- <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="option1" value="option1" placeholder="INDIA" checked>
+        
+      </label>
+  </div>
+  <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="option2" value="option2">
+         
+      </label>
+  </div>
+  <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="option3" value="option3">
+        
+      </label>
+  </div>
+  <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="option4" value="option4">
+        
+      </label>
+  </div>
+  <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="option5" value="option5">
+       
+      </label>
+  </div> -->
+        </form>
+        <div class="circle-box text-center">
+            <form method="get" action="{% url "agent-dashboard-second-page" %}">
+                <!-- <select name="destination">
+                {% for countries in countries %}
+                <option value="{{ countries.countryname }}">{{ countries.countryname }}</option>
+                    {% endfor %}
+                </select> -->
+                {% for country in countries %}
+                <button type="submit" name="destination" value="{{ country.id }}">{{ country.name }}</button> {% endfor %}
+            </form>
+
+            <!-- <form method="post" action="#">
+                {% csrf_token %} {% for countries in countries %}
+                <button type="submit" class="d-inlin-block  text-decoration-none" value="{{ countries.countryname }}" name=" destination ">{{ countries.countryname }}</button>
+                <button type="submit " class="d-inlin-block text-decoration-none " value="SINGAPORE " name="destination ">SINGAPORE</button>
+                <button type="submit " class="d-inlin-block text-decoration-none " value="MALAYSIA " name="destination ">MALAYSIA</button>
+                <br>
+                <button type="submit " class="d-inlin-block text-decoration-none " value="INDONESIA " name="destination ">INDONESIA</button>
+                <button type="submit " class="d-inlin-block text-decoration-none " value="THAILAND " name="destination ">THAILAND</button> {% endfor %}
+            </form> -->
+        </div>
+
+
+
+    </div>
+    </div>
+</section>
+
+{% endblock content %}

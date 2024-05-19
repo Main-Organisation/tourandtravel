@@ -1,0 +1,162 @@
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Approval</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+            margin-left: 150px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 110%;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between; /* Align items to the start and end of the container */
+            align-items: center; /* Center items vertically */
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .btn {
+            border-radius: 4px;
+            min-width: 80px;
+            margin-right: 8px;
+        }
+
+        .btn-verify {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-verify:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .btn-reject {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-reject:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        /* Adjusted styles for services list */
+        .services-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Ensure status cell stays small */
+        .status-cell {
+            max-width: 100px;
+            /* Adjust as needed */
+            word-wrap: break-word;
+            /* Allow long content to wrap */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Agent_aproval.html</h1>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="m-0">Agent Approvals</h3>
+                <a href="{% url 'admin-dashboard' %}" class="btn btn-primary">Dashboard</a> <!-- Button for dashboard (aligned to the right) -->
+            </div>
+            {% include 'message.html' %}
+            <div class="card-body">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Company Name</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Email</th>
+                                    <th>Contact</th>
+                                    <th>Code</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for agent in agents %}
+                                <tr>
+                                    <td>{{ agent.user.username }}</td>
+                                    <td>{{ agent.company_name }}</td>
+                                    <td>{{ agent.user.first_name }} {{ agent.user.last_name }}</td>
+                                    <td>{{ agent.city }}, {{ agent.country }}</td>
+                                    <td>{{ agent.email }}</td>
+                                    <td>{{ agent.mobile_number }}</td>
+                                    <td>{{ agent.agent_code }}</td>
+                                    <td class="status-cell">{% if agent.is_verify %}<span
+                                            class="badge badge-success">Verified</span>{% else %}<span
+                                            class="badge badge-warning">Not Verified</span>{% endif %}</td>
+                                    <td>
+                                        {% if agent.is_verify %}
+                                        <button class="btn btn-info btn-sm" disabled>View</button>
+                                        {% else %}
+                                        <button name="approve" value="{{ agent.id }}" class="btn btn-success btn-sm btn-verify">Approve</button>
+                                        {% comment %} <button class="btn btn-danger btn-sm btn-reject">Reject</button>
+                                        {% endcomment %}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

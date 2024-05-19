@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details Submission</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 20px; }
+        .container { max-width: 800px; }
+        .btn-group { margin-top: 20px; }
+        .form-text { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Room Details</h2>
+    <form id="roomForm" method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select name="category" class="form-control" id="country" required>
+                <option value="" disabled selected>Select a category</option>
+                <option name="category" value="Delux">Delux</option>
+                <option name="category" value="Standerd">Standerd</option>
+                <option name="category" value="Suit">Suit</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="roomSize">Room Size:</label>
+            <input type="text" name='size' class="form-control" id="roomSize" required>
+        </div>
+        <div class="form-group">
+            <label>Room Bed Type:</label>
+            <input type="text" name="bed_type" class="form-control" required>
+            {% comment %} <button type="button" class="btn btn-link">+ Add More</button> {% endcomment %}
+        </div>
+        <div class="form-group">
+            <label>Room Amenities:</label>
+            <input type="text" name="amenities" class="form-control" required>
+            {% comment %} <button type="button" class="btn btn-link">+ Add More</button> {% endcomment %}
+        </div>
+        <div class="form-group">
+            <label>Room Photos:</label>
+            <input type="file" name="room_photos" class="form-control-file" accept="image/*">
+            <small class="form-text text-muted">Max size: 5MB, Recommended dimensions: 1280x720 pixels</small>
+            {% comment %} <button type="button" class="btn btn-link">+ Add More</button> {% endcomment %}
+        </div>
+        <div class="btn-group">
+            <!-- <button type="button" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" onclick="location.href='addMoreRoomCategory.html'">Add More Room Category</button> -->
+            <button type="submit" class="btn btn-success" onclick="location.href='roomPriceMeals.html'">Save & Submit to Room Price & Meals Plans Page</button>
+        </div>
+        <div class="btn-group" style="margin-top: 10px;">
+            <button type="button" class="btn btn-info">View</button>
+            <button type="button" class="btn btn-warning">Edit</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Placeholder for your JavaScript code to handle form functionality
+</script>
+</body>
+</html>

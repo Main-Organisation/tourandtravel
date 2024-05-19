@@ -1,0 +1,89 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block body_container %}
+    <!--== BODY CONTAINER ==-->
+    <div class="container-fluid sb2">
+        <!-- ... rest of your code ... -->
+
+        <div class="sb2-2">
+            <!-- ... -->
+            <div class="sb2-2-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box-inn-sp">
+                            <div class="inn-title">
+                                <h4>Member Login Approval</h4>
+                                <!-- Dropdown Button -->
+                                <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users">
+                                    <i class="fa fa-ellipsis-h" style="transform: rotate(90deg);"></i>
+                                </a>
+                                <!-- Dropdown Structure -->
+                                <ul id="dr-users" class="dropdown-content">
+                                    <li><a href="#!">Add New</a></li>
+                                    <li><a href="#!">Edit</a></li>
+                                    <li><a href="#!">Update</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#!"><i class="material-icons">delete</i>Delete</a></li>
+                                    <li><a href="#!"><i class="material-icons">subject</i>View All</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-inn">
+                                <div class="table-responsive table-desi">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>User Name</th>
+                                                <th>Company Name</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Country</th>
+                                                <th>City</th>
+                                                <th>Email Id</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Vivek Saxena</td>
+                                                <td>Infique </td>
+                                                <td>vivek</td>
+                                                <td>Saxena</td>
+                                                <td>India</td>
+                                                <td>Delhi</td>
+                                                <td>myMail@gmail.com</td>
+                                            </tr>
+                                        </thead>
+                                        <!-- ... table body ... -->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock body_container %}
+    {% block bottom %}
+    <!--== BOTTOM FLOAT ICON ==-->
+    <section>
+        <div class="fixed-action-btn vertical">
+            <a class="btn-floating btn-large red pulse">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <!--======== SCRIPT FILES =========-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    {% endblock bottom %}
+</body>
+</html>    

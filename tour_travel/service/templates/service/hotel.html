@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Information Submission</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 20px; }
+        .container { max-width: 800px; }
+        .btn-group { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Hotel Information</h2>
+    <form method='post' action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="hotelName">Hotel Name:</label>
+            <input type="text" name='hotel_name' class="form-control" id="hotelName" required>
+        </div>
+        <div class="form-group">
+            <label for="hotelAddress">Hotel Address:</label>
+            <input type="text" name='hotel_address' class="form-control" id="hotelAddress" required>
+        </div>
+        <div class="form-group">
+            <label for="hotelContact">Hotel Contact No:</label>
+            <input type="text" name='hotel_contact' class="form-control" id="hotelContact" required>
+        </div>
+        <div class="form-group">
+            <label for="numberOfRooms">Number of Rooms:</label>
+            <input type="number" name='rooms' class="form-control" id="numberOfRooms" required>
+        </div>
+        <div class="form-group">
+            <label for="hotelPolicy">Hotel Policy:</label>
+            <textarea class="form-control" name='policy' id="hotelPolicy" rows="3"></textarea>
+            {% comment %} <button type="button" class="btn btn-link">+ Add More</button> {% endcomment %}
+        </div>
+        <div class="form-group">
+            <label>Hotel Photos:</label>
+            <input type="file" name='photos' class="form-control-file" accept="image/*">
+            <small class="form-text text-muted">Max size: 5MB, Dimensions: 1920x1080 pixels</small>
+            {% comment %} <button type="button" class="btn btn-link">+ Add More</button> {% endcomment %}
+        </div>
+        <div class="form-group">
+            <label>Hotel Videos:</label>
+            <input type="file" name='videos' class="form-control-file" accept="video/*">
+            <small class="form-text text-muted">Max size: 50MB, Formats: mp4, avi</small>
+            {% comment %} <button type="button" class="btn btn-link">+ Add More</button> {% endcomment %}
+        </div>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-secondary" onclick="location.href='roomDetails.html'">Save and Submit to Room Page</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Placeholder for custom script
+</script>
+</body>
+</html>

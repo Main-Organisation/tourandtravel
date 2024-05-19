@@ -1,0 +1,204 @@
+{% load static %}
+
+{% include "nav.html" %}
+
+
+
+    <section class="padding">
+        <div class="container">
+            <h2 class="text-center fs-1 py-5">Agent SignUp</h2>
+            <div class="">
+                <div class=" d-flex justify-content-between fs-4 border-bottom border-2 fw-bold ">
+                    <p class="text-uppercase m-0">Please fill out your company details to get access</p>
+                    <p class="text-uppercase m-0">denotes mandatory fields</p>
+
+                </div>
+                <!-- <form method="POST" action="#"> -->
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class=" row ">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="username " class="form-label fs-5 mt-3 fw-bolder ">Username</label>
+                                <input type="text" class="form-control " id="userName" name="username" required>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="email " class="form-label fs-5 mt-3 fw-bolder ">Email</label>
+                                <input type="email" class="form-control " id="userName" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="password" class="form-label fs-5 mt-3 fw-bolder ">Password</label>
+                                <input type="password" class="form-control " id="userPassword" name="password"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="col-12 ">
+                            <div class="mb-3 ">
+                                <label for="company " class="form-label fs-5 mt-3 fw-bolder ">Company Name</label>
+                                <input type="text " class="form-control " id="companyName" name="company" required>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="first_name " class="form-label fs-5 mt-3 fw-bolder ">First Name</label>
+                                <input type="text " class="form-control " id="firstName" name="first_name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="last_name " class="form-label fs-5 mt-3 fw-bolder ">Last Name</label>
+                                <input type="text " class="form-control " id="lastName" name="last_name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <label for="country " class="form-label fs-5 mt-3 fw-bolder ">Country</label>
+                            <select name="country" class="form-control" id="country" required>
+                                <option value="" disabled selected>Select a country</option>
+                                {% for country in countries %}
+                                    <option name="country" value="{{ country.id }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <label for="userCity " class="form-label fs-5 mt-3 fw-bolder ">City</label>
+                            <select class="form-select " id="userCity" name="userCity" required>
+                                <option selected required>-Select-</option>
+                                <option value="1 ">one</option>
+                                <option value="2 ">two</option>
+                                <option value="3 ">three</option>
+                            </select>
+                        </div> -->
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="city " class="form-label fs-5 mt-3 fw-bolder ">City</label>
+                                <input type="text " class="form-control " id="userEmail" name="city" required>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                            <div class="mb-3 ">
+                                <label for="mobile" class="form-label fs-5 mt-3 fw-bolder ">Mobile Number</label>
+                                <input type="text " class="form-control " id="userMobile" name="mobile" required>
+                            </div>
+                        </div>
+
+                        <!-- <div class=" d-md-flex justify-content-center items-end ">
+                                    <img src="images/deviantart.png " alt="CAPTCHA Image " class="mt-4 img-fluid "> -->
+                        <!-- <div class="d-block d-md-inline ">
+                                        <label for="captcha " class="form-label "></label>
+                                        <input type="text " class="form-control w-100 " id="captcha " name="captcha " placeholder="Enter CAPTCHA code " required>
+                                    </div> -->
+                        <!-- <div class="d-block d-md-inline ">
+                                        <p class="sm-block mt-4 ps-2 ">Enter The Text shown in Image</p>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-5 d-sm-block ">
+                                    <input type="checkbox " name="chekbox " id=" " required>
+                                    <p class="d-inline-block ps-2 fs-5 ">Yes,send me the B2B Special Newsletter, So that i Can stay informed of the best promotion and News Updates.</p>
+                                </div> -->
+                        <div class=" text-center secondery-button ">
+                            <button type="submit"
+                                class="btn btn-warning px-5 py-2">Submit</button>
+
+                        </div>
+
+                    </div>
+                </form>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer mt-5 ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-4 ">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </div>
+                <div class="col-md-4 ">
+                    <h5>Useful Links</h5>
+                    <ul class="list-unstyled ">
+                        <li><a href="# ">Home</a></li>
+                        <li><a href="# ">About Us</a></li>
+                        <li><a href="# ">Services</a></li>
+                        <li><a href="# ">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 ">
+                    <h5>Contact Us</h5>
+                    <p>123 Street, City, Country</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1234567890</p>
+                </div>
+            </div>
+            <div class="row mt-4 ">
+                <div class="col-md-12 text-center ">
+                    <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $(function () {
+            // Owl Carousel
+            var owl = $(".owl-carousel ");
+
+            owl.owlCarousel({
+                items: 1,
+                margin: 10,
+                loop: true,
+                nav: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
+                responsive: {
+
+                    0: {
+                        items: 1
+                    },
+
+                    768: {
+                        items: 1
+                    },
+
+                    992: {
+                        items: 1
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}">
+    </script>
+</body>
+
+</html>

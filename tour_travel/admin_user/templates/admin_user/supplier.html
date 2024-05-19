@@ -1,0 +1,57 @@
+<!-- admin_user/templates/admin_user/supplier_approval.html -->
+{% extends "base.html" %}
+{% load static %}
+{% block body_container %}
+<div class="sb2-2">
+    <div class="sb2-2-2">
+        <ul>
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li class="active-bre"><a href="#">Supplier Login Approval</a></li>
+        </ul>
+    </div>
+    <div class="sb2-2-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-inn-sp">
+                    <div class="inn-title">
+                        <h4>Supplier Login Approval</h4>
+                    </div>
+                    <div class="tab-inn">
+                        <div class="table-responsive table-desi">
+                            <table class="table table-hover" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Company Name</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Country</th>
+                                        <th>City</th>
+                                        <th>Email Id</th>
+                                        <th>Mobile Number</th>
+                                        <th>Hotel</th>
+                                        <th>Travel</th>
+                                        <th>Dining</th>
+                                        <th>Adventure</th>
+                                        <th>Approval</th>
+                                        <th>Reject</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body_container %}
+{% block bottom %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/materialize.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+{% endblock bottom %}

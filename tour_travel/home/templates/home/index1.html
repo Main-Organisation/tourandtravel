@@ -1,0 +1,669 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking-site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wapper">
+        <!--header-->
+        <header class="header">
+            <div class="wrap">
+                <div class="top-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                <div class="text-top">
+                                    <p style="color: gray;">Luxury Transport Services In Jaipur</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                <div class="text-top-righr">
+                                    <ul>
+                                        <li><a href="#" class="page-top-head">About Us /</a></li>
+                                        <li><a href="#" class="page-top-head">Services /</a></li>
+                                        <li><a href="#" class="page-top-head">24*7 Customer support</i></a></li>
+
+                                        <a href class="btn-booking">Online Booking</a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="meddle-header">
+                    <div class="logo"><img src="{% static 'assets/images/logo.png' %}" alt="company-logo"></div>
+
+                </div>
+                <hr>
+                <div class="bottom-header">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container">
+                            <a class="navbar-brand logo-main" href="#">Navbar</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">About Us</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Our Services
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                                <div class="search-box">
+                                    <button class="btn-search"><i class="fas fa-search"></i></button>
+                                    <input type="text" class="input-search" placeholder="Type to Search...">
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!--//header-->
+    </div>
+    <!--=======banner-slider----->
+    <section class="banner" id="banner">
+        <!-- <DIV class="overlay-banner"></DIV> -->
+        <div class="owl-carousel banner-carousel owl-theme">
+
+            <div class="item">
+                <figure><img src="{% static 'assets/images/slider/img-1.jpg' %}" alt="banner-1"></figure>
+
+            </div>
+            <div class="item">
+                <figure><img src="{% static 'assets/images/slider/img-3.jpg' %}" alt="banner-1"></figure>
+
+            </div>
+            <div class="item">
+                <figure><img src="{% static 'assets/images/slider/img-4.jpg' %}" alt="banner-1"></figure>
+
+            </div>
+            <div class="item">
+                <figure><img src="{% static 'assets/images/slider/img-5.jpg' %}" alt="banner-1"></figure>
+
+            </div>
+        </div>
+        <div class="main-tabs-box">
+            <div class="booking-tabs">
+                <ul class="nav nav-tabs booking-login">
+                    <li class="active nav-item"><a href="#memberlogin" data-toggle="tab">Member Login </a></li>
+                    <li class="nav-item"><a href="#agentlogin" data-toggle="tab">Travel Agent Login </a></li>
+                    <li class="nav-item"><a href="#supplierlogin" data-toggle="tab">Supplier Login
+                        </a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="forms" class="tab-pane fade in active show" id="memberlogin">
+                        <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Member Login</h4>
+                        <form>
+                            <lable class="input-name">Enter Your Email Id:-</lable>
+                            <input type="text" placeholder="youremail@gmail.com" class="form-control top-input">
+                            <lable class="input-name">Enter Your Passwoard:-</lable>
+                            <input type="text" placeholder="**********" class="form-control">
+                            <input type="checkbox" id="myCheckbox" name="myCheckbox"> <span
+                                style=" color: white;">Remember Me</span>
+                        </form>
+                        <div class="btn-login mt-5 text-center">
+                            <a href="#">Login</a>
+                        </div>
+                    </div>
+                    <div class="forms tab-pane fade" id="agentlogin">
+                        <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Agent Login</h4>
+                        <form>
+                            <lable class="input-name">Enter Your Email Id:-</lable>
+                            <input type="text" placeholder="youremail@gmail.com" class="form-control top-input">
+                            <lable class="input-name">Enter Your Passwoard:-</lable>
+                            <input type="text" placeholder="**********" class="form-control">
+                            <input type="checkbox" id="myCheckbox" name="myCheckbox"> <span
+                                style=" color: white;">Remember Me</span>
+                        </form>
+                        <div class="btn-login mt-5 text-center">
+                            <a href="#">Login</a>
+                        </div>
+                    </div>
+                    <div class="forms tab-pane fade" id="supplerlogin">
+                        <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Supplier Login</h4>
+                        <form>
+                            <lable class="input-name">Enter Your Email Id:-</lable>
+                            <input type="text" placeholder="youremail@gmail.com" class="form-control top-input">
+                            <lable class="input-name">Enter Your Passwoard:-</lable>
+                            <input type="text" placeholder="**********" class="form-control">
+                            <input type="checkbox" id="myCheckbox" name="myCheckbox"> <span
+                                style=" color: white;">Remember Me</span>
+                        </form>
+                        <div class="btn-login mt-5 text-center">
+                            <a href="#">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---============banner-close ---->
+    <section class="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="icon-feature"><img src="assets/images/icon/best-price.png" alt="best-price-icon">
+                        </div>
+                        <div class="details-icon">
+                            <h4>Best Price Guarantee</h4>
+                            <p>There are many variations of but the majority have simply free text.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="icon-feature"><img src="assets/images/icon/booking.png" alt="best-price-icon"></div>
+                        <div class="details-icon">
+                            <h4>Easy & Quick Booking</h4>
+                            <p>There are many variations of but the majority have simply free text.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="icon-feature"><img src="assets/images/icon/tourism.png" alt="best-price-icon"></div>
+                        <div class="details-icon">
+                            <h4>Best Tour Selection</h4>
+                            <p>There are many variations of but the majority have simply free text.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----=======feature close---->
+    <section class="aboutus">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="left-abt">
+                        <Figure>
+                            <img src="assets/images/bg-4.jpg" alt="about-page-images">
+                        </Figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="RIGHT-abt">
+                        <div class="tille-section title-abt" style="text-align: left;">
+                            <span>Learn about us</span>
+                            <h2>Dare to Explore with Tevily Agency  </h2>
+                            <p>We are trusted by our clients and have a reputation for the best services in the field. Lorem ipsum is simply free text dolor sit amett consectetur adipiscing elit. It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                        <div class="proved mb-3">
+                            <div class="name-provied">
+                                <span>Best Service</span>
+                                <span>90%  </span>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar w-75"></div>
+                              </div>
+                        </div>
+                        <div class="proved">
+                            <div class="name-provied">
+                                <span>Best Service</span>
+                                <span>90%  </span>
+                            </div>
+                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar w-75"></div>
+                              </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tour-feature" id="tour">
+        <div class="container">
+            <div class="tille-section">
+                <span>Featured tours</span>
+                <h2>Top Destination For Your Next Vacation</h2>
+            </div>
+            <div class="owl-carousel tour-carousel owl-theme">
+                <div class="item">
+                    <div class="img-destination">
+                        <DIV class="img-overlay"></DIV>
+                        <figure><img src="assets/images/tour/india.webp" alt="destination-images"></figure>
+                        <div class="img-dtails">
+                            <div class="hover-details">
+                                <h3><a href="#">India</a></h3>
+                                <p class="mb-3">Discover the India With Our Special Tour</p>
+                                <a href="#" class="btn-tour">See All Tours</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-destination">
+                        <DIV class="img-overlay"></DIV>
+                        <figure><img src="assets/images/tour/singapore.webp" alt="destination-images"></figure>
+                        <div class="img-dtails">
+                            <div class="hover-details">
+                                <h3><a href="#">Singapore</a></h3>
+                                <p class="mb-3">Discover the Singapore With Our Special Tour</p>
+                                <a href="#" class="btn-tour">See All Tours</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-destination">
+                        <DIV class="img-overlay"></DIV>
+                        <figure><img src="assets/images/tour/malesia.webp" alt="destination-images"></figure>
+                        <div class="img-dtails">
+                            <div class="hover-details">
+                                <h3><a href="#">Malayasia</a></h3>
+                                <p class="mb-3">Discover the Malayasia With Our Special Tour</p>
+                                <a href="#" class="btn-tour">See All Tours</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-destination">
+                        <DIV class="img-overlay"></DIV>
+                        <figure><img src="assets/images/tour/indonesia.webp" alt="destination-images"></figure>
+                        <div class="img-dtails">
+                            <div class="hover-details">
+                                <h3><a href="#">Indonesia</a></h3>
+                                <p class="mb-3">Discover the Indonesia With Our Special Tour</p>
+                                <a href="#" class="btn-tour">See All Tours</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img-destination">
+                        <DIV class="img-overlay"></DIV>
+                        <figure><img src="assets/images/tour/thailand.webp" alt="destination-images"></figure>
+                        <div class="img-dtails">
+                            <div class="hover-details">
+                                <h3><a href="#">Thailand</a></h3>
+                                <p class="mb-3">Discover the Thailand With Our Special Tour</p>
+                                <a href="#" class="btn-tour">See All Tours</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-all">      
+                <a href="#">All Destination</a>
+            </div>
+        </div>
+    </section>
+    <!----=========tour-featurr=====-->
+     <section class="offer" id="offer">
+        <div class="tille-section">
+            <span>Offers</span>
+            <h2>Offers To Inspire You</h2>
+        </div>
+            <div class="container">
+                <div class="owl-carousel offer-carousel owl-theme">
+                    <div class="item">
+                        <div class="img-destination offer-destination">
+                            <DIV class="img-overlay"></DIV>
+                            <figure><img src="assets/images/offer/offer-1.webp" alt="destination-images"></figure>
+                            <div class="img-dtails offer-details">
+                                <div class="hover-details offer-details-hover">
+                                    <h3><a href="#">
+                                        South Bali (Kuta, Canggu,
+                                        Uluwatu, Jimbaran)</a></h3>
+                                    <p class="mb-3">Travel hassle-free within Bali,visit popular
+                                        attractions, or do water activities!</p>
+                                    <a href="#" class="btn-tour">See All Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination offer-destination">
+                            <DIV class="img-overlay"></DIV>
+                            <figure><img src="assets/images/offer/offer-2.webp" alt="destination-images"></figure>
+                            <div class="img-dtails offer-details">
+                                <div class="hover-details offer-details-hover">
+                                    <h3><a href="#">
+                                        South Bali (Kuta, Canggu,
+                                        Uluwatu, Jimbaran)</a></h3>
+                                    <p class="mb-3">Travel hassle-free within Bali,visit popular
+                                        attractions, or do water activities!</p>
+                                    <a href="#" class="btn-tour">See All Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination offer-destination">
+                            <DIV class="img-overlay"></DIV>
+                            <figure><img src="assets/images/offer/offer-3.webp" alt="destination-images"></figure>
+                            <div class="img-dtails offer-details">
+                                <div class="hover-details offer-details-hover">
+                                    <h3><a href="#">
+                                        South Bali (Kuta, Canggu,
+                                        Uluwatu, Jimbaran)</a></h3>
+                                    <p class="mb-3">Travel hassle-free within Bali,visit popular
+                                        attractions, or do water activities!</p>
+                                    <a href="#" class="btn-tour">See All Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination offer-destination">
+                            <DIV class="img-overlay"></DIV>
+                            <figure><img src="assets/images/offer/offer-4.webp" alt="destination-images"></figure>
+                            <div class="img-dtails offer-details">
+                                <div class="hover-details offer-details-hover">
+                                    <h3><a href="#">
+                                        South Bali (Kuta, Canggu,
+                                        Uluwatu, Jimbaran)</a></h3>
+                                    <p class="mb-3">Travel hassle-free within Bali,visit popular
+                                        attractions, or do water activities!</p>
+                                    <a href="#" class="btn-tour">See All Activities</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-all">      
+                    <a href="#">See All Offers</a>
+                </div>
+                <div class="footer-ticker mt-4">
+                    <div class="scrolling-ticker">
+                        <div class="scrolling-ticker-box">
+                            <div class="scrolling-content">
+                                <span>Generate Your Own Power</span>
+                                <span>Reap the Returns</span>
+                                <span>Heal the World</span>
+                                <span>Efficiency &amp; Power</span>
+                                <span>24*7 Support</span>
+                            </div>
+            
+                            <div class="scrolling-content">
+                                <span>Generate Your Own Power</span>
+                                <span>Reap the Returns</span>
+                                <span>Heal the World</span>
+                                <span>Efficiency &amp; Power</span>
+                                <span>24*7 Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </section>
+    <!---=====-Offers-close-======-->
+    <section class="Properties" id="offer">
+        <div class="tille-section">
+            <span>properties Type</span>
+            <h2>Browse by property type</h2>
+        </div>
+        <div class="container">
+            <div class="container">
+                 <div class="owl-carousel properties-carousel owl-theme">
+                    <div class="item">
+                        <div class="img-destination ">
+                           <figure><a href="#"><img src="assets/images/hotal.jpg" alt="dproperties-type-hotals"></a></figure>
+                        </div>
+                        <H3>Hotal</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/appartment.jpg" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Apparments</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/resort.jpg" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Resort </H3>
+                    </div>   
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/villa.jpg" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Villas</H3>                  
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/cabins.jpg" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Cabins</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/cottages.jpg" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Cottages</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/glaming.gif" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Glamping Site</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/serviced-appartments.gif" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Serviced Appartment</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/Guest-house.gif" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Guest House</H3>
+                    </div>
+                    <div class="item">
+                        <div class="img-destination ">
+                            <figure><a href="#"><img src="assets/images/cottages.jpg" alt="dproperties-type-hotals"></a></figure> 
+                        </div>
+                        <H3>Cottages</H3>
+                    </div>
+                </div>
+                <!-- <div class="btn-all">      
+                    <a href="#">See All Offers</a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!---==========allproperty-close=========-->
+    <section class="tripplaner" id="trip">
+        <div class="container">
+            <div class="tille-section">
+                <span>Quick and easy trip planner</span>
+                <h2>Pick a vibe and explore the top destinations in India</h2>
+            </div>
+           <div class="tabs-trip-location">
+            <ul class="tab-list">
+                <li><a href="#" class="active" ><img src="assets/images/icon/travel.png" alt="outdoor-icon">Outdoors</a></li>
+                <li><a href="#"><img src="assets/images/icon/cityscape.png" alt="outdoor-icon">City</a></li>
+                <li><a href="#"><img src="assets/images/icon/beach-chair.png" alt="outdoor-icon">Beach</a></li>
+                <li><a href="#"><img src="assets/images/icon/love.png" alt="outdoor-icon">Romance</a></li>
+
+            </ul>
+           </div>
+           <div class="tab-content">
+            <div class="tabs-box">
+                <div class="container">
+                    <div class="owl-carousel trip-carousel owl-theme">
+                        <div class="item">
+                            <div class="img-destination ">
+                               <figure><a href="#"><img src="assets/images/TRIP/GOA.webp" alt="dproperties-type-hotals"></a></figure>
+                            </div>
+                            <H3>Goa</H3>
+                        </div>
+                        <div class="item">
+                            <div class="img-destination ">
+                                <figure><a href="#"><img src="assets/images/TRIP/HIMACHAL.webp" alt="dproperties-type-hotals"></a></figure> 
+                            </div>
+                            <H3>Himachal Predesh</H3>
+                        </div>
+                        <div class="item">
+                            <div class="img-destination ">
+                                <figure><a href="#"><img src="assets/images/TRIP/JAIPUR.webp" alt="dproperties-type-hotals"></a></figure> 
+                            </div>
+                            <H3>Jaipur</H3>
+                        </div>   
+                        <div class="item">
+                            <div class="img-destination ">
+                                <figure><a href="#"><img src="assets/images/TRIP/KSMIR.webp" alt="dproperties-type-hotals"></a></figure> 
+                            </div>
+                            <H3>Jamu Kasmir</H3>                  
+                        </div>
+                        <div class="item">
+                            <div class="img-destination ">
+                                <figure><a href="#"><img src="assets/images/TRIP/LADAKH.webp" alt="dproperties-type-hotals"></a></figure> 
+                            </div>
+                            <H3>Ladakh</H3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+
+        </div>
+    </section>
+    <!----======trip close===========-->
+    <section class="discount-section">
+        <div class="container">
+            <div class="resister-box">
+           <div class="img-map">
+            <figure><img src="assets/images/globle.png" alt=""></figure>
+           </div>
+           <div class="content-discunt">
+            <h3>Get instant discounts</h3>
+            <p>Simply sign into your Mautropik account and look for the blue Genius logo to save</p>
+            <div class="btn-discount mt-3">
+                <a href="#">Sign In</a>
+                <a href="#">Register</a>
+            </div>
+           </div>
+            </div>
+        </div>
+    </section>
+    <!---=========discount-section close=====-->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>Stay in the know</h2>
+                <p>Sign up to get marketing emails from mautropik, including promotions, rewards, travel experiences and information about mautropik’s and mautropik Transport Limited’s products and services.</p>
+            <div class="form-newsletter mb-1">
+                <form action="">
+                    <div class="form-box">
+                        <input type="text" placeholder="Your Email Address" class="form-control">
+                        <a href="#" class="btn-subscribe">Subscribe</a>
+                    </div>
+                </form>
+            </div>
+            <p>You can opt out any time. See our <a href="#">privacy statement</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="padding_4x">
+        <div class="flex">
+            <section class="flex-content padding_1x">
+                <h3>Top Products</h3>
+                <a href="#">Managed Website</a>
+                <a href="#">Manage Reputation</a>
+                <a href="#">Power Tools</a>
+                <a href="#">Marketing Service</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Quick Links</h3>
+                <a href="#">Jobs</a>
+                <a href="#">Brand Assets</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Terms of Service</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Features</h3>
+                <a href="#">Jobs</a>
+                <a href="#">Brand Assets</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Terms of Service</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Resources</h3>
+                <a href="#">Guides</a>
+                <a href="#">Research</a>
+                <a href="#">Experts</a>
+                <a href="#">Agencies</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Newsletter</h3>
+                <p>You can trust us. we only send promo offers,</p>
+                <fieldset class="fixed_flex">
+                    <input type="email" name="newsletter" placeholder="Your Email Address">
+                    <button class="btn btn_2">Subscribe</button>
+                </fieldset>
+            </section>
+        </div>
+        <div class="flex">
+            <section class="flex-content padding_1x">
+                <p>Copyright ©2023 All rights reserved || website name</p>
+            </section>
+            <section class="flex-content padding_1x">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </section>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/myscript.js"></script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>

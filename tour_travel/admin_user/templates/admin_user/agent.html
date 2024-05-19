@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_container %}
+            <div class="sb2-2">
+                <div class="sb2-2-2">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        </li>
+                        <li class="active-bre"><a href="#"> Agent Login Approvel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sb2-2-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-inn-sp">
+                                <div class="inn-title">
+                                    <h4>Agent Login Approvel</h4>
+                                    <!-- <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p> -->
+                                    <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="fa fa-ellipsis-h" style="transform: rotate(90deg);"></i></a>
+                                    <ul id="dr-users" class="dropdown-content">
+                                        <li><a href="#!">Add New</a>
+                                        </li>
+                                        <li><a href="#!">Edit</a>
+                                        </li>
+                                        <li><a href="#!">Update</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
+                                        </li>
+                                        <li><a href="#!"><i class="material-icons">subject</i>View All</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Dropdown Structure -->
+
+                                </div>
+                                <div class="tab-inn">
+                                    <div class="table-responsive table-desi">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>User Name</th>
+                                                    <th>Company Name</th>
+                                                    <th>First Name	</th>
+                                                    <th>Last Name</th>
+                                                    <th>Country</th>
+                                                    <th>City</th>
+                                                    <th>Email Id</th>
+                                                    <th>	Mobile Number</th>
+                                                    <th>Approvel</th>
+                                                    <th>Reject</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="list-img">Kamal Kumar</span>
+                                                    </td>
+                                                    <td><a href="#"><span class="list-enq-name">Infique ai Pvt. Ltd.</a>
+                                                    </td>
+                                                    <td>Kamal</td>
+                                                    <td>Kumar</td>
+                                                    <td>India</td>
+                                                    <td>Jaipur</td>
+                                                    <td>Kamlkumar@gmail.com</td>
+                                                    <td>+91 123-1234-123</td>
+                                                    <td>
+                                                        <a href="#" class="btn-userapprovel">Approve</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="btn-userapprovel">Not Approve</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="list-img">Kamal Kumar</span>
+                                                    </td>
+                                                    <td><a href="#"><span class="list-enq-name">Infique ai Pvt. Ltd.</a>
+                                                    </td>
+                                                    <td>Kamal</td>
+                                                    <td>Kumar</td>
+                                                    <td>India</td>
+                                                    <td>Jaipur</td>
+                                                    <td>Kamlkumar@gmail.com</td>
+                                                    <td>+91 123-1234-123</td>
+                                                    <td>
+                                                        <a href="#" class="btn-userapprovel">Approve</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" class="btn-userapprovel">Not Approve</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock body_container %}
+    {% block bottom %}
+    <!--== BOTTOM FLOAT ICON ==-->
+    <section>
+        <div class="fixed-action-btn vertical">
+            <a class="btn-floating btn-large red pulse">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a>
+                </li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
+                </li>
+                <li><a class="btn-floating green"><i class="material-icons">publish</i></a>
+                </li>
+                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!--======== SCRIPT FILES =========-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/custom.js"></script>
+    {% endblock bottom %}
+</body>

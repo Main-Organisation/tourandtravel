@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .home-section {
+      margin-left: 85px; /* Adjust the margin-left to the width of your sidebar */
+      transition: margin-left 0.3s; /* Add transition for smooth effect */
+    }
+
+    .home-content {
+      transition: margin-left 0.3s; /* Add transition for smooth effect */
+    }
+
+    .sidebar.open {
+      width: 300px; /* Adjust the width of your sidebar */
+    }
+
+    .home-section.open {
+      margin-left: 300px; /* Adjust the margin-left to the width of your sidebar */
+    }
+
+    .home-content.open {
+      margin-left: 320px; /* Adjust the margin-left to provide a small gap between the sidebar and content */
+    }
+
+    .text {
+      transition: margin-left 0.3s; /* Add transition for smooth effect */
+    }
+  </style>
+
+  <script>
+  function loadDepartment(departmentName) {
+   const url = `/admin_user/${departmentName}/`;
+   console.log("URL to load:", url);
+   $.ajax({
+      url: url,
+      type: 'GET',
+      success: function (data) {
+         $('#departmentContent').html(data); // Load content into the 'departmentContent' div
+      },
+      error: function (xhr, status, error) {
+         console.error('Error loading department:', error);
+         console.error('Status:', status);
+         console.error('XHR:', xhr);
+      }
+   });
+}
+
+function loadDashboard() {
+   loadDepartment('dashboard');
+}
+$(document).ready(function () {
+   loadDashboard();
+});
+
+  </script>
+</head>
+<body style="background: rgb(228, 233, 247);">
+  <div class="sidebar close">
+    <div class="logo-details">
+      <span class="logo_name">
+        <a href="#" onclick="loadDepartment('dashboard')" class="logo">
+          <img class="logo" src="{% static 'photos/logo2.png' %}" alt="Logo">
+        </a>
+      </span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#" onclick="loadDepartment('dashboard')">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">ERP Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Student</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Student</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow'></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Student</a></li>
+          <li><a href="#" onclick="loadDepartment('member')">Member Login</a></li>
+          <li><a href="#" onclick="loadDepartment('student_details')">Student Details</a></li>
+          <li><a href="#" onclick="loadDepartment('groupby')">Group By</a></li>
+          <li><a href="#" onclick="loadDepartment('analytical')">Analytical</a></li>
+          <li><a href="#" onclick="loadDepartment('leave')">Leave</a></li>
+        </ul>
+      </li>
+      <li><a href="#" onclick="loadDepartment('supplier')"><i class='bx bx-user' ></i><span class="link_name">Supplier</span></a></li>
+      <li><a href="#" onclick="loadDepartment('newsbar')"><i class='bx bx-news' ></i><span class="link_name">News Bar</span></a></li>
+      <li><a href="#" onclick="loadDepartment('addplace')"><i class='bx bx-map' ></i><span class="link_name">Add Place</span></a></li>
+      <li><a href="#" onclick="loadDepartment('nationality')"><i class='bx bx-flag' ></i><span class="link_name">Nationality</span></a></li>
+      <li><a href="#" onclick="loadDepartment('hotels')"><i class='bx bx-hotel' ></i><span class="link_name">Hotels</span></a></li>
+      <li><a href="#" onclick="loadDepartment('approved_hotel')"><i class='bx bx-check' ></i><span class="link_name">Approved Hotels</span></a></li>
+      <li><a href="#" onclick="loadDepartment('pending_hotel')"><i class='bx bx-time' ></i><span class="link_name">Pending Hotels</span></a></li>
+      <li><a href="#" onclick="loadDepartment('suspend_hotel')"><i class='bx bx-block' ></i><span class="link_name">Suspend Hotels</span></a></li>
+      <li><a href="#" onclick="loadDepartment('transfer')"><i class='bx bx-transfer' ></i><span class="link_name">Transfer</span></a></li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' onclick="toggleMenu()"></i>
+      <span class="text" id="departmentContent">Drop Down Sidebar</span>
+    </div>
+  </section>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

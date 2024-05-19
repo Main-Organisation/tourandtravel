@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Successful</title>
+</head>
+<body>
+    <h1>Registration Successful</h1>
+    <p>Your registration was successful!</p>
+    {% if supplier %}
+        <p>Your unique supplier code is: {{ supplier.supplier_code }}</p>
+        <p>Your registration will approved in 24 Hours. </p>
+        <p>Please use this supplier code at the time of login </p>
+    {% else %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

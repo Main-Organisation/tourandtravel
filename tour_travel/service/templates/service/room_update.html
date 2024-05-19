@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Price & Meal Plans</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 20px; }
+        .container { max-width: 800px; }
+        .btn-group { margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Room Price & Meal Plans</h2>
+    <form id="priceMealForm" method="post" action="">
+        {% csrf_token %}
+        <!-- <div class="form-group">
+            <label for="roomCategorySelect">Choose Room Category:</label>
+            <select class="form-control" id="roomCategorySelect">
+                <option>Deluxe</option>
+                <option>Standard</option>
+                <option>Suite</option> -->
+                <!-- Add more options as needed -->
+            <!-- </select>
+        </div> -->
+        <div class="form-group">
+            <label for="mealPlan">Meal Plan:</label>
+            <input type="text" name="meal_plan" class="form-control" id="mealPlan" required>
+        </div>
+        <div class="form-group">
+            <label>Net Price:</label>
+            <input type="number" name="single_price" class="form-control mb-2" placeholder="Single" required>
+            <input type="number" name="double_price" class="form-control mb-2" placeholder="Double" required>
+            <input type="number" name="extra_bed_price" class="form-control mb-2" placeholder="Extra Bed Adults" required>
+            <input type="number" name="child_bed_price" class="form-control mb-2" placeholder="Child With Bed" required>
+            <input type="number" name="no_child_bed_price" class="form-control mb-2" placeholder="Child No Bed" required>
+        </div>
+        <div class="form-group">
+            <label for="cancellationPolicy">Cancellation Policy:</label>
+            <textarea class="form-control" name="cancel_policy" id="cancellationPolicy" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="maxGuests">No of Guest Max:</label>
+            <input type="number" name="num_guests" class="form-control" id="maxGuests" required>
+        </div>
+        <div class="btn-group">
+            <!-- <button type="button" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary">Add More Room Price</button> -->
+            <button type="submit" class="btn btn-success" onclick="location.href='submitToAdmin.html'">Save & Submit to Admin</button>
+        </div>
+        <div class="btn-group" style="margin-top: 10px;">
+            <button type="button" class="btn btn-info">View</button>
+            <button type="button" class="btn btn-warning">Edit</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Placeholder for custom script to handle form functionality
+</script>
+</body>
+</html>

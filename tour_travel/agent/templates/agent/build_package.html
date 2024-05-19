@@ -1,0 +1,82 @@
+{% extends "agent/agent_nav.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="pt-5">
+        <div class="container">
+            <h3 class="border-bottom pb-2">Please fill the details to proceed</h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-4">
+                        <p class="fw-bolder">Location</p>
+                        <p class="fw-bolder">Select Agent</p>
+                        <p class="fw-bolder pt-2">Arrival Date</p>
+                        <p class="fw-bolder pt-3">Guest</p>
+                        <p class="fw-bolder pt-4">Nationality</p>
+                        <p class="fw-bolder pt-3">No of Adult</p>
+                        <p class="fw-bolder pt-2">No of CWB (7-12)yr.</p>
+                        <p class="fw-bolder pt-2">No of CNB (3-6)yr.</p>
+                        <p class="fw-bolder pt-2">No of Infants (Below 3)yr.</p>
+                    </div>
+                    <div class="col-8">
+
+                        <div id="destination" name="selectd_destination" required>
+                            <input type="hidden" name="selected_destination" value="{{ country.id }}">
+                            <p>{{country.name}}</p>
+                        </div>
+                        <!-- <p>"{{selectd_destination}}"</p> -->
+                        <div id="travel" name="travel" required>
+                            <input type="hidden" name="travel" value="{{agent.company_name}}">
+
+                            <p>{{agent.company_name}}</p>
+                        </div>
+                        <!-- <form> -->
+                        <input type="date" id="arrival" name="arrival" placeholder=" Date " class="form-control w-50 px-1 mt-3 " required>
+                        <div class="d-flex align-items-center ">
+                            <input type="text" id="guest" name="guest" placeholder="Mr./Ms./Mrs." class="form-control d-inline-block mx-2 mt-3" required>
+                            <input type="text" id="firstname" name="firstname" placeholder="First Name" class="form-control d-inline-block mx-2 mt-3 " required>
+                            <input type="text" id="lastname" name="lastname" placeholder="Last Name" class="form-control d-inline-block mx-2 mt-3 " required>
+                        </div>
+                        <div class=" ">
+                            <select class="form-select mt-3 " id="userCountry1 " name="country" aria-label="Default select example " required>
+                        <option selected>-select-</option>
+                        {% for cnt in countries %}
+                            <option name="country" value="{{cnt.id}}">{{cnt.name}}</option>
+                        {% endfor %}
+                    </select>
+                        </div>
+                        <div class=" ">
+                            <input type="number" name="adults" placeholder="No. of Adults" class="form-control d-inline-block mx-2 mt-3 " required>
+                        </div>
+                        <div class=" ">
+                            <input type="number" name="cwb" placeholder="No. of CWB" class="form-control d-inline-block mx-2 mt-3 " required>
+                        </div>
+                        <div class=" ">
+                            <input type="number" name="cnb" placeholder="No. of CNB" class="form-control d-inline-block mx-2 mt-3 " required>
+                        </div>
+                        <div class=" ">
+                            <input type="number" name="infants" placeholder="No. of Infants" class="form-control d-inline-block mx-2 mt-3 " required>
+                        </div>
+                        <!-- More select elements with unique IDs -->
+                        <!-- Buttons -->
+                        <div class="mt-3 ">
+                            <button type="button" class="btn btn-secondary">
+                                <a style="text-decoration: none; color: white;" href="{% url "agent-dashboard-second-page" %}">Back</a>
+                            </button>
+                            <button type="submit" class="btn btn-primary">Book</button>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+
+
+
+        </div>
+
+    </section>
+    {% endblock content %}

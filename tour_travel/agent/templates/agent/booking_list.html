@@ -1,0 +1,155 @@
+{% extends "agent/agent_nav.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card tab-form mt-5 border-0">
+                        <ul class="nav nav-tabs border-0 justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active bg-info mx-2" id="member-tab" data-bs-toggle="tab" href="{% url "agent-build-package" %}" role="tab">Build your package</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-info mx-2 text-black" id="agent-tab" data-bs-toggle="tab" href="#" role="tab">Book Hotel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-info mx-2" id="supplier-tab" data-bs-toggle="tab" href="#supplier-transfer" role="tab">Book Transfer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bg-info mx-2" id="tour-tab" data-bs-toggle="tab" href="#tour" role="tab">Book tour</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    {% include "message.html" %}
+                    <div class="card-body px-0">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="member" role="tabpanel">
+                                <h5 class="card-title">Build your Package</h5>
+                                <form class="d-flex mt-2" action="">
+                                    <input type="text" name="query_number" class="form-control " id="member-query" placeholder="Enter Query Number">
+                                    <!-- <span class="d-inline-block px-1">or</span>
+                                    <select class="form-select" id="member-country" aria-label="Default select example">
+                                        <option selected>Choose Country</option>
+                                        {% for country in countries %}
+                                            <option name="country_id" value="{{country.id}}">{{country.name}}</option>
+                                        {% endfor %}
+                                    </select> -->
+                                    <span class="d-inline-block px-1">or</span>
+                                    <input type="date" name="query_date_from" class="form-control mx-2" placeholder="Enter Query Date From">
+                                    <input type="date" name="query_date_to" class="form-control mx-2" placeholder="Enter Query Date To">
+                                    <button type="submit" class="btn btn-primary d-inline-block">Search</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="agent" role="tabpanel">
+                                <h5 class="card-title">Book Hotel</h5>
+                                <form class="d-flex mt-2">
+                                    <input type="text" class="form-control" id="agent-query" placeholder="Enter Query Number" required>
+                                    <span class="d-inline-block px-1">or</span>
+                                    <select class="form-select" id="agent-country" aria-label="Default select example" required>
+                            <option selected>Choose Country</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                                    <span class="d-inline-block px-1">or</span>
+                                    <input type="password" class="form-control mx-2" id="agent-password1" placeholder="Enter Query Date From" required>
+                                    <input type="password" class="form-control mx-2" id="agent-password2" placeholder="Enter Query Date From" required>
+                                    <button type="submit" class="btn btn-primary d-inline-block">Search</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="supplier-transfer" role="tabpanel">
+                                <h5 class="card-title">Book Transfer</h5>
+                                <form class="d-flex mt-2">
+                                    <input type="text" class="form-control mx-2" id="transfer-query" placeholder="Enter Query Number" required>
+                                    <span class="d-inline-block px-1">or</span>
+                                    <select class="form-select" id="transfer-country" aria-label="Default select example" required>
+                            <option selected>Choose Country</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                                    <span class="d-inline-block px-1">or</span>
+                                    <input type="text" class="form-control mx-2" id="transfer-password1" placeholder="Enter Query Date Form" required>
+                                    <input type="Text" class="form-control mx-2" id="transfer-password2" placeholder="Enter Query Date to" required>
+                                    <button type="submit" class="btn btn-primary d-inline-block">Search</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="tour" role="tabpanel">
+                                <h5 class="card-title">Book tour</h5>
+                                <form class="d-flex mt-2">
+                                    <input type="text" class="form-control mx-2" id="tour-query" placeholder="Enter Query Number" required>
+                                    <span class="d-inline-block px-1">or</span>
+                                    <select class="form-select" id="tour-country" aria-label="Default select example" required>
+                            <option selected>Choose Country</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                                    <span class="d-inline-block px-1">or</span>
+                                    <input type="Text" class="form-control mx-2" id="tour-password1" placeholder="Enter Query Date From" required>
+                                    <input type="Text" class="form-control mx-2" id="tour-password2" placeholder="Enter Query Date" required>
+                                    <button type="submit" class="btn btn-primary d-inline-block">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="table-responsive mt-2">
+                    <table class="table table-bordered">
+                        <thead class="">
+                            <tr class="">
+                                <th scope="col">S. No.</th>
+                                <th scope="col">Web Id</th>
+                                <th scope="col">Created Date</th>
+                                <th scope="col">Arrival Date</th>
+                                <th scope="col">Guest Name</th>
+                                <th scope="col">Adult/cwb/cnb/infant</th>
+                                <th scope="col">Booking Status</th>
+                                <th scope="col">Services</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">View Quotation</th>
+                                <th scope="col">Remark</th>
+                                <th scope="col">Voucher</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            {% for booking in bookings %}
+              <tr class="text-center">
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{booking.web_id}}</td>
+                <td>{{booking.created_at}}</td>
+                <td>{{booking.arrival_date}}</td>
+                <td>{{booking.guest_name}}</td>
+                <td>{{booking.number_of_adults}}/{{booking.number_of_cwb}}/{{booking.number_of_cnb}}/{{booking.number_of_infants}}</td>
+                <td>Quoted</td>
+                <td> <button class="rounded-2 bg-info text-white border-0 px-1">Add/Amend</button> </td>
+                <td><button class="rounded-2 bg-info text-white border-0 px-1">Reserve</button></td>
+                <td><button class="rounded-2 bg-info text-white border-0 px-1">View Quotation</button></td>
+                <td></td>
+                <td>Pending</td>
+                <td> <button class="bg-success text-white px-1 border-0">Edit</button> </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+    {% endblock content %}

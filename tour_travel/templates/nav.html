@@ -1,0 +1,306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- slider -->
+    <!-- fontfamily -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- font-family -->
+    <style>
+         :root {
+            --primery: #3734fd;
+            --secondery-color: #79cbd6;
+            --h1: 64px;
+            --h2: 36px;
+            --s-text: 14px;
+            --m-heading: 22px;
+            --b-heading: 500;
+            --border: 1px;
+            --font-weight: 500;
+            --padding: 100px 0px;
+        }
+        /*--Header--*/
+        /* Custom CSS for the header */
+        
+        .header {
+            background-color: #fff;
+            /* Background color */
+            padding: 10px 0;
+            /* Padding */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Box shadow */
+        }
+        
+        .navbar-brand img {
+            max-width: 100px;
+            /* Adjust the max-width of the logo */
+        }
+        
+        .navbar-nav .nav-link {
+            color: #333;
+            /* Text color */
+            font-weight: bold;
+            /* Font weight */
+            padding: 10px 15px;
+            /* Padding */
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #555;
+            /* Text color on hover */
+        }
+        /* Styling for active link */
+        
+        .navbar-nav .nav-link.active {
+            color: #007bff;
+            /* Active link color */
+        }
+        /* Styling for borders */
+        
+        .navbar-nav .nav-link.border-start {
+            border-left: 1px solid #333;
+            /* Border color */
+        }
+        /* Styling for sticky header */
+        
+        .header.sticky-top {
+            background-color: #fff;
+            /* Background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Box shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            /* Transition effect */
+        }
+        /*--Cards--*/
+        /* Custom CSS for styling cards */
+        
+        .card {
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .card-text {
+            color: #666;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        /*--Home page promotion slider css-*/
+        /* Custom CSS for Owl Carousel Navigation */
+        
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .owl-prev {
+            left: 10px;
+        }
+        
+        .owl-next {
+            right: 10px;
+        }
+        
+        .owl-prev:hover,
+        .owl-next:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .owl-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .owl-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .owl-dot.active {
+            background-color: #333;
+        }
+        /*--Home page form --*/
+        
+        .tab-form .nav-item a {
+            font-size: 14px;
+            padding: 4px 4px !important;
+        }
+        
+        .icon {
+            top: 7px;
+            right: 16px;
+        }
+        
+        .primery-button a {
+            padding: 5px 90px !important;
+            border-radius: 0px;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+        }
+        /*--Footer--*/
+        /* Custom CSS for the footer */
+        
+        .footer {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+        
+        .footer h5 {
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer ul li a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer ul li a:hover {
+            color: #000;
+        }
+        
+        .footer .col-md-12 p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .footer .col-md-12 p a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer .col-md-12 p a:hover {
+            color: #000;
+        }
+        
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header class="header border-bottom border-dark border-2 sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+
+                <div class="logo">
+                    <a class="navbar-brand" href="#"> <img src="{% static 'images\deviantart.png' %}"  alt=""></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active home-border fw-bold" aria-current="page" href="{% url "index" %}">Home</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">Why T2W</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">Destinations</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">Brands</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">Awards</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">GSA</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#"> Affiliation</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">Media</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a class="nav-link active border-start border-dark py-0 fw-bold" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item py-2">
+                            <a href="{% url "admin-login" %}" class="nav-link active border-start border-dark py-0 fw-bold" href="#">Admin Login</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </body>
+    </head>
