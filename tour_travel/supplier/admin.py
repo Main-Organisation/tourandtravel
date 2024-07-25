@@ -1,22 +1,16 @@
 from django.contrib import admin
-from .models import Service, Supplier
+from .models import Supplier, Service
 
-# Register your models here.
-
-@admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
-    list_display = ['id', 'supplier_username', 'supplier_code', 'is_verify', 'is_reject']
-    list_display_links = ['id', 'supplier_username']
-    list_filter = ['is_verify', 'is_reject']
-    search_fields = [
-        'user__username',
-        'email',
-        'supplier_code'
-    ]
-    # actions = ['mark_verify', 'mark_unverify']
+    list_display = ['username', 'email', 'is_approved']
+    list_filter = ['is_approved']
+    search_fields = ['username', 'email']
+    ordering = ['username']
+    actions = ['approve_suppliers']
 
-    def supplier_username(self, obj):
-        return obj.user.username
-    supplier_username.short_description = 'supplier_username'
+    def approve_suppliers(self, request, queryset):
+        queryset.update(is_approved=True)
+    approve_suppliers.short_description = "Approve selected suppliers"
 
+admin.site.register(Supplier, SupplierAdmin)
 admin.site.register(Service)

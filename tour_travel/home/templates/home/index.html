@@ -164,62 +164,31 @@ hr {
             </div>
         </div>
         <div class="main-tabs-box">
-            <div class="booking-tabs">
-                <ul class="nav nav-tabs booking-login">
-                    <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#memberlogin">Member Login</a></li>
-                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#agentlogin">Travel Agent Login</a></li>
-                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#supplierlogin">Supplier Login</a></li>
-                </ul>        
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="memberlogin">
-                        <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Member Login</h4>
-                        <form>
-                            <label class="input-name">Enter Your Email Id:-</label>
-                            <input type="text" placeholder="youremail@gmail.com" class="form-control top-input">
-                            <label class="input-name">Enter Your Password:-</label>
-                            <input type="password" placeholder="**********" class="form-control">
-                            <input type="checkbox" class="myCheckbox" name="myCheckbox"> <span style="color: white;">Remember Me</span>
-                        </form>
-                        <div class="btn-login mt-5 text-center">
-                            <a href="#">Login</a>
-                            <a href="#">signup</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="agentlogin">
-                        <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Agent Login</h4>
-                        <form>
-                            <label class="input-name">Enter the code</label>
-                            <input type="text" placeholder=IN0010 class="form-control top-input">
-                            <label class="input-name">Enter Your Email Id:-</label>
-                            <input type="text" placeholder="youremail@gmail.com" class="form-control top-input">
-                            <label class="input-name">Enter Your Password:-</label>
-                            <input type="password" placeholder="**********" class="form-control">
-                            <input type="checkbox" class="myCheckbox" name="myCheckbox"> <span style="color: white;">Remember Me</span>
-                        </form>
-                        <div class="btn-login mt-5 text-center">
-                            <a href="#">Login</a>
-                            <a href="#" class="btn btn-primary">Sign Up</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="supplierlogin">
-                        <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Supplier Login</h4>
-                        <form>
-                            <label class="input-name">Enter the code</label>
-                            <input type="text" placeholder=IN0010 class="form-control top-input">
-                            <label class="input-name">Enter Your Email Id:-</label>
-                            <input type="text" placeholder="youremail@gmail.com" class="form-control top-input">
-                            <label class="input-name">Enter Your Password:-</label>
-                            <input type="password" placeholder="**********" class="form-control">
-                            <input type="checkbox" class="myCheckbox" name="myCheckbox"> <span style="color: white;">Remember Me</span>
-                        </form>
-                        <div class="btn-login mt-5 text-center">
-                            <a href="#">Login</a>
-                            <a href="{%url 'supplier-register'%}" class="btn btn-primary">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="booking-tabs">
+        <ul class="nav nav-tabs booking-login">
+            <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#memberlogin">Member Login</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#agentlogin">Travel Agent Login</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#supplierlogin">Supplier Login</a></li>
+        </ul>
+    
+    <h4 class="text-center mb-5" style="color: white; font-weight: 600;">Supplier Login</h4>
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label class="input-name">Enter Your Username:</label>
+    <input type="text" placeholder="Your username" class="form-control top-input" name="username">
+    <label class="input-name">Enter Your Password:</label>
+    <input type="password" placeholder="**********" class="form-control" name="password">
+    <input type="checkbox" class="myCheckbox" name="remember_me"> <span style="color: white;">Remember Me</span>
+    <div class="btn-login mt-5 text-center">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Sign Up</a>
+    </div>
+</form>
+
+</div>
+
+            
+
         
         <script>
             $(document).ready(function(){

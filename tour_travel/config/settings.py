@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'admin_user',
     'home',
     'service',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default backend
+    'supplier.backends.EmailAuthBackend',  # Custom backend
+]
 
 
 # Database
@@ -104,7 +109,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # DATABASE LOCAL
 DATABASES ={
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tour_travel',                # Your MySQL database name
         'USER': 'root',         # Your MySQL username

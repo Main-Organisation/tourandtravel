@@ -3,7 +3,6 @@
 {% block body_container %}
 <div class="sb2-2">
     <div class="sb2-2-2">
-    
                     <div class="row">
                         <div class="col-md-12">
                             <div class="box-inn-sp">
@@ -96,24 +95,24 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
-        function updateOptions(inputValue) {
-          var selector = document.getElementById("mySelector");
-          var options = selector.options;
-          var textFound = false;
-          for (var i = 0; i < options.length; i++) {
-            if (options[i].value.toLowerCase() === inputValue.toLowerCase()) {
-              selector.selectedIndex = i;
-              textFound = true;
-              break;
-            }
-          }
-          if (!textFound) {
-            var newOption = document.createElement("option");
-            newOption.text = inputValue;
-            newOption.value = inputValue;
-            options.add(newOption);
-            selector.selectedIndex = options.length - 1;
-          }
+    function updateOptions(inputValue) {
+        var selector = document.getElementById("mySelector");
+        var options = selector.options;
+        var textFound = false;
+        for (var i = 0; i < options.length; i++) {
+        if (options[i].value.toLowerCase() === inputValue.toLowerCase()) {
+            selector.selectedIndex = i;
+            textFound = true;
+            break;
         }
-      </script>
-      {% endblock bottom %}
+        }
+        if (!textFound) {
+        var newOption = document.createElement("option");
+        newOption.text = inputValue;
+        newOption.value = inputValue;
+        options.add(newOption);
+        selector.selectedIndex = options.length - 1;
+        }
+    }
+    </script>
+    {% endblock bottom %}

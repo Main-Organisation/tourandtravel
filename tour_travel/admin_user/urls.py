@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import *
+from django.views import View
+from . import views
 
 urlpatterns = [
     path('login/', AdminLoginView.as_view(), name='admin-login'),
@@ -9,7 +11,8 @@ urlpatterns = [
     path('user-services/', AdminSupplierServiceView.as_view(), name='admin-user-services'),
     path('agent-approval/', AdminAgentApprovalView.as_view(), name='admin-agent-approval'),
     path('member/', MemberView.as_view(), name='admin-member'),
-    path('supplier/', SupplierView.as_view(), name='admin-supplier'),
+    path('supplier/', views.SupplierView, name='admin-supplier'),
+    #  path('supplier/approve/<int:supplier_id>/', views.approve_supplier, name='approve_supplier'),
     path('newsbar/', NewsBarView.as_view(), name='admin-newsbar'),
     path('addplace/', AddPlaceView.as_view(), name='admin-addplace'),
     path('nationality/', NationalityView.as_view(), name='admin-nationality'),

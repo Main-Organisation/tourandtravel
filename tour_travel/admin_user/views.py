@@ -7,8 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
 from supplier.models import Supplier, Service
 from agent.models import Agent
-
-
+from supplier.models import Supplier
 class AdminDashView(View):
     def get(self, request):
         return render(request, 'admin_user/admin_dash.html')
@@ -21,9 +20,23 @@ class AgentView(View):
     def get(self, request):
         return render(request, 'admin_user/agent.html')
 
-class SupplierView(View):
-    def get(self, request):
-        return render(request, 'admin_user/supplier.html')
+
+
+def SupplierView(request):
+    suppliers = Supplier.objects.all()
+    services = {service.name: service for service in Service.objects.all()}
+
+    # Preprocess suppliers to check for service presence
+    for supplier in suppliers:
+        supplier.has_hotel = supplier.services.filter(name='Hotel').exists()
+        supplier.has_taxi_transfer = supplier.services.filter(name='Taxi transfer').exists()
+        supplier.has_dining = supplier.services.filter(name='Dining').exists()
+        supplier.has_adventure = supplier.services.filter(name='Adventure').exists()
+        
+
+    return render(request, 'admin_user/supplier.html', {'suppliers': suppliers})
+
+    
 
 class NewsBarView(View):
     def get(self, request):
